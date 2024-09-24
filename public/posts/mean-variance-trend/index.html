@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      #content {
+        background-color: white;
+        margin-left: 170pt;
+        margin-right: 170pt;
+        margin-top: 50pt;
+      }
+      #date {
+        color: gray;
+        font-size: small;
+      }
+    </style>
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ], 
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Differential Gene Expression (DGE) Analysis in R</h1>
+      
+      <h1 id="background">Background</h1>
+<p>In an RNA-seq experiment, we may have samples from different &ldquo;treatments&rdquo; or &ldquo;groups&rdquo;. For example, we could have a total of $10$ samples, with $5$ samples coming from the &ldquo;diseased&rdquo; group and the other $5$ samples coming from the healthy group &ndash; &ldquo;diseased&rdquo; in this context could refer to any disease (e.g. <a href="">COPD</a>). We may have more or less than two treatments. This is just a toy example.</p>
+<p>With DGE analysis, we can identify which genes are <em>differentially expressed</em> across the treatments.</p>
+<p>Suppose we have two $S_{1}$ and $S_{2}$ from different treatments, and for each we measure the expression level of gene $G_{1}$ and $G_{2}$, amongst othere genes. If the expression of $G_{1}$ is &ldquo;roughly&rdquo; the same in both $S_{1}$ and $S_{2}$, then we say that $G_{1}$ is not differentially expressed, at least with respect to these two samples. Suppose on the other hand that $G_{2}$ <em>is</em> differentially expressed &ndash; say it is more expressed in the sample $S_{1}$ from the diseased group than it is in the sample $S_{2}$ from the healthy group. This would indicate that $G_{2}$ somehow contributes to the development of the disease we are examining. This is useful knowledge because we can know refer back to biological literature about the function of gene $G_{2}$ in the organism we are studying and understand how that relates to the symptoms expressed by the disease.</p>
+<h1 id="dge-analysis-in-r-with-edger-and-limma-voom">DGE Analysis in R with <code>edgeR</code> and <code>limma-voom</code></h1>
+
+    </div>
+  </body>
+</html>

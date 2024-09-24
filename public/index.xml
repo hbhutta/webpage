@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Haad Bhutta</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Haad Bhutta</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Sep 2024 14:52:57 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>P Value</title>
+      <link>http://localhost:1313/posts/p-value/</link>
+      <pubDate>Mon, 23 Sep 2024 14:52:57 -0700</pubDate>
+      <guid>http://localhost:1313/posts/p-value/</guid>
+      <description>&lt;p&gt;The $p$-value is not so elusive a concept as you might think. It is necessary to understand the $p$-value to understand hypothesis testing. For any RNA-seq experiment, we&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Salmon Tximport</title>
+      <link>http://localhost:1313/posts/salmon-tximport/</link>
+      <pubDate>Mon, 23 Sep 2024 14:36:31 -0700</pubDate>
+      <guid>http://localhost:1313/posts/salmon-tximport/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Singular Value Decomposition (SVD)</title>
+      <link>http://localhost:1313/posts/svd/</link>
+      <pubDate>Mon, 23 Sep 2024 13:10:06 -0700</pubDate>
+      <guid>http://localhost:1313/posts/svd/</guid>
+      <description>&lt;p&gt;abc 123 svd&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Covariance Matrix</title>
+      <link>http://localhost:1313/posts/covariance_matrix/</link>
+      <pubDate>Mon, 23 Sep 2024 12:48:51 -0700</pubDate>
+      <guid>http://localhost:1313/posts/covariance_matrix/</guid>
+      <description>&lt;h5 id=&#34;definition&#34;&gt;Definition:&lt;/h5&gt;&#xA;&lt;p&gt;Let $X \in \mathbb{R}^{n \times d}$. Refer to the $d$-th column (feature) of $X$ as $f_{d}$. The &lt;em&gt;covariance matrix&lt;/em&gt; $\text{Cov}(X)$ is the following real, symmetric matrix:&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\text{Cov}(X) =&#xA;\begin{bmatrix}&#xA;\text{Cov}(f_{1}, f_{1}) &amp;amp; \text{Cov}(f_{1}, f_{2}) &amp;amp; \ldots &amp;amp; \text{Cov}(f_{1}, f_{d}) \\&#xA;\text{Cov}(f_{2}, f_{1}) &amp;amp; \text{Cov}(f_{2}, f_{2}) &amp;amp; \ldots &amp;amp; \text{Cov}(f_{2}, f_{d}) \\&#xA;\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\&#xA;\text{Cov}(f_{d}, f_{1}) &amp;amp; \text{Cov}(f_{d}, f_{2}) &amp;amp; \ldots &amp;amp; \text{Cov}(f_{d}, f_{d}) \\&#xA;\end{bmatrix}&#xA;$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Differential Gene Expression (DGE) Analysis in R</title>
+      <link>http://localhost:1313/posts/dge-analysis/</link>
+      <pubDate>Mon, 23 Sep 2024 12:20:07 -0700</pubDate>
+      <guid>http://localhost:1313/posts/dge-analysis/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;&#xA;&lt;p&gt;In an RNA-seq experiment, we may have samples from different &amp;ldquo;treatments&amp;rdquo; or &amp;ldquo;groups&amp;rdquo;. For example, we could have a total of $10$ samples, with $5$ samples coming from the &amp;ldquo;diseased&amp;rdquo; group and the other $5$ samples coming from the healthy group &amp;ndash; &amp;ldquo;diseased&amp;rdquo; in this context could refer to any disease (e.g. &lt;a href=&#34;&#34;&gt;COPD&lt;/a&gt;). We may have more or less than two treatments. This is just a toy example.&lt;/p&gt;&#xA;&lt;p&gt;With DGE analysis, we can identify which genes are &lt;em&gt;differentially expressed&lt;/em&gt; across the treatments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Principal Component Analysis (PCA)</title>
+      <link>http://localhost:1313/posts/pca/</link>
+      <pubDate>Mon, 23 Sep 2024 09:28:44 -0700</pubDate>
+      <guid>http://localhost:1313/posts/pca/</guid>
+      <description>&lt;p&gt;Let $X$ be an $n \times d$ matrix. In an experimental content, $X$ could be a data matrix with $n$ observations and $d$ features. If $d &amp;gt; 3$, we cannot visualize the data to observe patterns and structure. This is a problem because data visualization can yield significant insights into data.&lt;/p&gt;&#xA;&lt;p&gt;One solution is to reduce the dimensionality of the data. In other words, we can transform the $n \times d$ data matrix $X$ into an $n \times k$ data matrix $P$ where $k \leq 3$. To do so, we have to find a $d \times k$ transformation matrix $Z$ such that:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

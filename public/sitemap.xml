@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-09-23T14:52:57-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/p-value/</loc>
+    <lastmod>2024-09-23T14:52:57-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-09-23T14:52:57-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/salmon-tximport/</loc>
+    <lastmod>2024-09-23T14:36:31-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/svd/</loc>
+    <lastmod>2024-09-23T13:10:06-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/covariance_matrix/</loc>
+    <lastmod>2024-09-23T12:48:51-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/dge-analysis/</loc>
+    <lastmod>2024-09-23T12:20:07-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/pca/</loc>
+    <lastmod>2024-09-23T09:28:44-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url>
+</urlset>
