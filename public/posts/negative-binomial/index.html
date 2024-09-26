@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <style>
+      div {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+
+      pre, code {
+        color: rgb(24, 174, 119);
+      }
+
+      #content {
+        background-color: white;
+        margin-left: 170pt;
+        margin-right: 170pt;
+        margin-top: 50pt;
+      }
+      #date {
+        color: gray;
+        font-size: small;
+      }
+    </style>
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ], 
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Negative Binomial Distribution</h1>
+      
+      <hr>
+<p>With the NB distribution, we can ask, for example:</p>
+<blockquote>
+<p><em>&ldquo;What is the probability of rolling the fifth 6 on the twentieth roll of a die?&rdquo;</em></p>
+</blockquote>
+<p>This question suggests that:</p>
+<ol>
+<li>The twentieth roll of the die <em>must</em> be one of the five 6&rsquo;s that must be rolled in order to get a &ldquo;5th 6&rdquo;</li>
+<li>The other four 6&rsquo;s <em>must</em> have been rolled in the previous nineteen rolls</li>
+</ol>
+<p>For the second, point, just like in the binomial distribution, we have to pick four rolls out of nineteen to be our &ldquo;successes&rdquo;. There are ${19 \choose 4} = {20 - 1 \choose 5 - 1}$ ways to do this. If the &ldquo;success&rdquo; probability is $p$ then, by the product rule of probability, the probability of getting $4$ success is $p^{4}$. The remaining $(20-1)-(5-1) = 15$ trials must be failures then, the probability of getting this many failures &ndash; again by the product rule of probability &ndash; must be $(1-p)^{15}$. Altogether, if we want the $x$-th trial to be the $r$-th success, then out of the previous $x-1$ trials we must have had $r-1$ successes, meaning a total of $(x-1)-(r-1) = x - r$ failures. Therefore, if the random variable $X$ follows the NB distriibution, then:
+$$
+P(X=x) = { x - 1 \choose r - 1}(1-p)^{x-r}p^{r}
+$$</p>
+<p>We denote that &ldquo;$X$ follows a NB distribution&rdquo; if $X \sim \text{NB}(p)$, where $p$ is the probability of success.</p>
+
+    </div>
+  </body>
+</html>

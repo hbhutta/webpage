@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <style>
+      div {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+
+      pre, code {
+        color: rgb(24, 174, 119);
+      }
+
+      #content {
+        background-color: white;
+        margin-left: 170pt;
+        margin-right: 170pt;
+        margin-top: 50pt;
+      }
+      #date {
+        color: gray;
+        font-size: small;
+      }
+    </style>
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ], 
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Multiple Hypothesis Testing and the False Discovery Rate</h1>
+      
+      <hr>
+<h1 id="background-and-motivation">Background and motivation</h1>
+<h2 id="hypothesis-testing">Hypothesis Testing</h2>
+<p>A <em>hypothesis</em> is a guess. In any (statistical) hypothesis test, we have a null hypothesis ($H_{0}$) and an <em>alternative</em> hypothesis ($H_{a}$). The latter is named as such because it is the <em>alternative</em> guess, opposite of $H_{0}$. We decide to accept or reject $H_{0}$ based on a quantity called the <a href="#p-value">${p}$-value</a>, derived from the <strong>test statistic</strong> which itself is obtained from the <strong>statistical test</strong> we choose to use considering our data.</p>
+<h2 id="p-value">$p$-value</h2>
+<p>The $p$-value is the likelihood of falsely rejecting the null hypothesis $H_{0}$. It was arbitrarily decided by <a href="https://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</a> that having $p &lt; 0.05$ means there is less than a $5\%$ chance of falsely rejecting $H_0$ so it is safe to do so, and having $p &gt; 0.05$ means there is more than a $5\%$ chance of falsely rejecting $H_{0}$ so it is <em>not</em> safe to do so. In other words, $5\%$ is the threshold for determining if the likelihood of falsely rejecting $H_{0}$ is trivial or non-trivial.</p>
+<h3 id="how-the-p-value-accounts-for-intra-group-variability">How the $p$-value accounts for intra-group variability</h3>
+<p>Intuitively, drawing a conclusion from comparing the means of groups with <em>large</em> intra-group variability would not be as &ldquo;significant&rdquo; as drawing the same conclusion from a comparison of groups with <em>low</em> intra-group variability.</p>
+<p>For example, there are infinitely many pairs $(x,y)$ that satisfy the below equation:
+$$
+\frac{x+y}{2} = 1
+$$</p>
+<p>In other words, there are infinitely many points $(x,y)$ whose mean is 1. For example $(x,y) = (2,0)$ and $(x,y) = (1,1)$ satisfy this equation. But $|2-0| \neq |1-1|$; meaning if $x$ and $y$ are individual data points in a dataset whose mean we are taking, then the &ldquo;group&rdquo; $(x,y) = (2,0)$ has more intra-group variability than the group $(x,y) = (1,1)$</p>
+<h2 id="mutliple-hypothesis-testing-and-the-multiple-comparisons-problem">Mutliple Hypothesis Testing and the Multiple Comparisons Problem</h2>
+<p>In differential gene expression analysis, we want to know if a given gene $g$ has different mean expression levels in different treatments (groups). Comparing means makes this a statistical question. Supposing we have gene $g$ and treatments $T_{1}, \ldots, T_{k}$, and supposing that the mean expression level (however this is measured) of gene $g$ in treatment $T_{i}$ is denoted as $\mu_{g, T_{i}}$, we have the following null and alternative hypotheses <em>for each gene</em> $g$:
+$$
+\begin{cases}
+H_{0}: \forall 1 \leq i \neq j \leq k, \mu_{g, T_{i}}  =    \mu_{g, T_{j}} \\
+H_{a}: \exists i,j \in [1, \ldots, k]: \mu_{g, T_{i}}  \neq \mu_{g, T_{j}}
+\end{cases}
+$$</p>
+<p>We will have this set of hypotheses <em>for each gene</em>, hence the situation becomes <em>multiple hypothesis testing</em>.</p>
+<p>In the null hypothesis $H_{0}$, we hypothesize that any two treatments $T_{i}$ and $T_{j}$ have the same mean expression level of gene $g$. In the alternative hypothesis $H_{a}$, we hypothesize that there exist at least two treatments $T_{i}$ and $T_{j}$ with <em>different</em> mean expression levels of gene $g$.</p>
+<p><del>Since there are $k$ means (i.e. each treatment (group) $T_{i}$ notes a mean expression level for gene $g$), and we do not assume normality of the data, we have to use a non-parametric statistical test to compare the $k$ means. Namely, we use the <em>Kruskal-Wallis</em> test.</del></p>
+
+    </div>
+  </body>
+</html>

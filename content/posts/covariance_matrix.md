@@ -4,7 +4,6 @@ date = 2024-09-23T12:48:51-07:00
 draft = true
 +++
 
-##### Definition:
 Let $X \in \mathbb{R}^{n \times d}$. Refer to the $d$-th column (feature) of $X$ as $f_{d}$. The *covariance matrix* $\text{Cov}(X)$ is the following real, symmetric matrix:
 
 $$
@@ -30,6 +29,8 @@ This means that if we *zero-mean* (i.e. "center") the data matrix $X$, such that
 $$
 \text{Cov}(X) = \frac{1}{n-1}X^{T}X
 $$
+
+
 
 
 

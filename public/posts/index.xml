@@ -6,8 +6,36 @@
     <description>Recent content in Posts on Haad Bhutta</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Sep 2024 14:52:57 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2024 17:17:30 -0700</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Foo</title>
+      <link>http://localhost:1313/posts/foo/</link>
+      <pubDate>Tue, 24 Sep 2024 17:17:30 -0700</pubDate>
+      <guid>http://localhost:1313/posts/foo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Negative Binomial Distribution</title>
+      <link>http://localhost:1313/posts/negative-binomial/</link>
+      <pubDate>Tue, 24 Sep 2024 16:57:02 -0700</pubDate>
+      <guid>http://localhost:1313/posts/negative-binomial/</guid>
+      <description>&lt;h2 id=&#34;definition&#34;&gt;Definition&lt;/h2&gt;&#xA;&lt;p&gt;A random variable $X$ follows a &lt;em&gt;negative binomial&lt;/em&gt; (NB) distribution if:&#xA;$$&#xA;P(X=x) = { x - 1 \choose r - 1}(1-p)^{x-r}p^{r}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;With the NB distribution, we can ask, for example:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;&amp;ldquo;What is the probability of rolling the fifth 6 on the twentieth roll of a die?&amp;rdquo;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;This question suggests that&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;The twentieth roll of the die &lt;em&gt;must&lt;/em&gt; be one of the five 6&amp;rsquo;s that must be rolled in order to get a &amp;ldquo;5th 6&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;The other four 6&amp;rsquo;s &lt;em&gt;must&lt;/em&gt; have been rolled in the previous nineteen rolls&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;For the second, point, just like in the binomial distribution, we have to pick four rolls out of nineteen to be our &amp;ldquo;successes&amp;rdquo;. There are ${19 \choose 4} = {20 - 1 \choose 5 - 1}$ ways to do this. If the &amp;ldquo;success&amp;rdquo; probability is $p$ then, by the product rule of probability, the probability of getting $4$ success is p^{4}. The remaining $(20-1)-(5-1) = 15$ trials must be failures then, the probability of getting this many failures &amp;ndash; again by the product rule of probability &amp;ndash; must be $(1-p)^{15}$. Altogether, if we want the $x$-th trial to be&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Assessment of Variability</title>
+      <link>http://localhost:1313/posts/assessment-of-variability/</link>
+      <pubDate>Tue, 24 Sep 2024 15:49:42 -0700</pubDate>
+      <guid>http://localhost:1313/posts/assessment-of-variability/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;In the data analysis of RNA-seq data, we want to assess the &lt;em&gt;inter-group variability&lt;/em&gt; and the &lt;em&gt;intra-group variability&lt;/em&gt;. &lt;em&gt;Inter-group variability&lt;/em&gt; is the variability between different groups (a.k.a conditions, groups). For example, the differential expression of a gene between two groups is a type of inter-group variability. &lt;em&gt;Intra-group variability&lt;/em&gt; is the variability &lt;em&gt;within&lt;/em&gt; a group, amongst the samples in that group. Intra-group variability arise from the technical and biological differences in the sampling procedure for different samples&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. For example, two samples within a group could be taken on different days or stored in different temperature conditions &amp;ndash; this would be a technical difference between the two samples.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Multiple Hypothesis Testing and the False Discovery Rate</title>
+      <link>http://localhost:1313/posts/mhs-fdr/</link>
+      <pubDate>Tue, 24 Sep 2024 10:52:21 -0700</pubDate>
+      <guid>http://localhost:1313/posts/mhs-fdr/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;background-and-motivation&#34;&gt;Background and motivation&lt;/h1&gt;&#xA;&lt;p&gt;When we perform &lt;a href=&#34;http://localhost:1313/posts/dge-analysis/&#34; title=&#34;Differential Expression Analysis&#34;&gt;differential expression analysis&lt;/a&gt;, for each gene $g$ tracked in the RNA-seq count matrix, we establish the null hypothesis that $g$ is not differentially expressed across the treatment groups &amp;ndash; of which there are typically two (e.g. diseased and healthy). Having thousands of genes in the count matrix means testing for multiple hypotheses (&lt;em&gt;multiple hypothesis testing&lt;/em&gt;).&lt;/p&gt;&#xA;&lt;h2 id=&#34;hypothesis-testing&#34;&gt;Hypothesis Testing&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;em&gt;hypothesis&lt;/em&gt; is a guess. In any (statistical) hypothesis test, we have a null hypothesis ($H_{0}$) and an &lt;em&gt;alternative&lt;/em&gt; hypothesis ($H_{a}$). The latter is named as such because it is the &lt;em&gt;alternative&lt;/em&gt; guess, opposite of $H_{0}$. We decide to accept or reject $H_{0}$ based on a quantity calculated from the sample data called the &lt;em&gt;test statistic&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>P Value</title>
       <link>http://localhost:1313/posts/p-value/</link>
@@ -27,21 +55,21 @@
       <link>http://localhost:1313/posts/svd/</link>
       <pubDate>Mon, 23 Sep 2024 13:10:06 -0700</pubDate>
       <guid>http://localhost:1313/posts/svd/</guid>
-      <description>&lt;p&gt;abc 123 svd&lt;/p&gt;</description>
+      <description></description>
     </item>
     <item>
       <title>Covariance Matrix</title>
       <link>http://localhost:1313/posts/covariance_matrix/</link>
       <pubDate>Mon, 23 Sep 2024 12:48:51 -0700</pubDate>
       <guid>http://localhost:1313/posts/covariance_matrix/</guid>
-      <description>&lt;h5 id=&#34;definition&#34;&gt;Definition:&lt;/h5&gt;&#xA;&lt;p&gt;Let $X \in \mathbb{R}^{n \times d}$. Refer to the $d$-th column (feature) of $X$ as $f_{d}$. The &lt;em&gt;covariance matrix&lt;/em&gt; $\text{Cov}(X)$ is the following real, symmetric matrix:&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\text{Cov}(X) =&#xA;\begin{bmatrix}&#xA;\text{Cov}(f_{1}, f_{1}) &amp;amp; \text{Cov}(f_{1}, f_{2}) &amp;amp; \ldots &amp;amp; \text{Cov}(f_{1}, f_{d}) \\&#xA;\text{Cov}(f_{2}, f_{1}) &amp;amp; \text{Cov}(f_{2}, f_{2}) &amp;amp; \ldots &amp;amp; \text{Cov}(f_{2}, f_{d}) \\&#xA;\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\&#xA;\text{Cov}(f_{d}, f_{1}) &amp;amp; \text{Cov}(f_{d}, f_{2}) &amp;amp; \ldots &amp;amp; \text{Cov}(f_{d}, f_{d}) \\&#xA;\end{bmatrix}&#xA;$$&lt;/p&gt;</description>
+      <description>&lt;p&gt;Let $X \in \mathbb{R}^{n \times d}$. Refer to the $d$-th column (feature) of $X$ as $f_{d}$. The &lt;em&gt;covariance matrix&lt;/em&gt; $\text{Cov}(X)$ is the following real, symmetric matrix:&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\text{Cov}(X) =&#xA;\begin{bmatrix}&#xA;\text{Cov}(f_{1}, f_{1}) &amp;amp; \text{Cov}(f_{1}, f_{2}) &amp;amp; \ldots &amp;amp; \text{Cov}(f_{1}, f_{d}) \\&#xA;\text{Cov}(f_{2}, f_{1}) &amp;amp; \text{Cov}(f_{2}, f_{2}) &amp;amp; \ldots &amp;amp; \text{Cov}(f_{2}, f_{d}) \\&#xA;\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\&#xA;\text{Cov}(f_{d}, f_{1}) &amp;amp; \text{Cov}(f_{d}, f_{2}) &amp;amp; \ldots &amp;amp; \text{Cov}(f_{d}, f_{d}) \\&#xA;\end{bmatrix}&#xA;$$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Differential Gene Expression (DGE) Analysis in R</title>
       <link>http://localhost:1313/posts/dge-analysis/</link>
       <pubDate>Mon, 23 Sep 2024 12:20:07 -0700</pubDate>
       <guid>http://localhost:1313/posts/dge-analysis/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;&#xA;&lt;p&gt;In an RNA-seq experiment, we may have samples from different &amp;ldquo;treatments&amp;rdquo; or &amp;ldquo;groups&amp;rdquo;. For example, we could have a total of $10$ samples, with $5$ samples coming from the &amp;ldquo;diseased&amp;rdquo; group and the other $5$ samples coming from the healthy group &amp;ndash; &amp;ldquo;diseased&amp;rdquo; in this context could refer to any disease (e.g. &lt;a href=&#34;&#34;&gt;COPD&lt;/a&gt;). We may have more or less than two treatments. This is just a toy example.&lt;/p&gt;&#xA;&lt;p&gt;With DGE analysis, we can identify which genes are &lt;em&gt;differentially expressed&lt;/em&gt; across the treatments.&lt;/p&gt;</description>
+      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;background-and-motivation&#34;&gt;Background and motivation&lt;/h1&gt;&#xA;&lt;p&gt;In an RNA-seq experiment, we may have samples from different &amp;ldquo;treatments&amp;rdquo; or &amp;ldquo;groups&amp;rdquo;. For example, we could have a total of $10$ samples, with $5$ samples coming from the &amp;ldquo;diseased&amp;rdquo; group and the other $5$ samples coming from the healthy group &amp;ndash; &amp;ldquo;diseased&amp;rdquo; in this context could refer to any disease (e.g. &lt;a href=&#34;https://www.cdc.gov/copd/index.html&#34;&gt;COPD&lt;/a&gt;). We may have more or less than two treatments. This is just a toy example.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Principal Component Analysis (PCA)</title>

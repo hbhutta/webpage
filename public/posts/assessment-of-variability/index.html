@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <style>
+      div {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+
+      pre, code {
+        color: rgb(24, 174, 119);
+      }
+
+      #content {
+        background-color: white;
+        margin-left: 170pt;
+        margin-right: 170pt;
+        margin-top: 50pt;
+      }
+      #date {
+        color: gray;
+        font-size: small;
+      }
+    </style>
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ], 
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Assessment of Variability</h1>
+      
+      <hr>
+<p>In the data analysis of RNA-seq data, we want to assess the <em>inter-group variability</em> and the <em>intra-group variability</em>. <em>Inter-group variability</em> is the variability between different groups (a.k.a conditions, groups). For example, the differential expression of a gene between two groups is a type of inter-group variability. <em>Intra-group variability</em> is the variability <em>within</em> a group, amongst the samples in that group. Intra-group variability arise from the technical and biological differences in the sampling procedure for different samples<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. For example, two samples within a group could be taken on different days or stored in different temperature conditions &ndash; this would be a technical difference between the two samples.</p>
+<p><del>Assessing variability within the data is a form of quality assurance. Two useful techniques for identifying inter- and intra-group variability are <a href="http://localhost:1313/posts/pca/" title="Principal Component Analysis">principal component analysis (PCA)</a> and Pearson correlation heatmaps. The latter visualize correlation between samples (???)</del></p>
+<p>Consider this small mathematical example. There are infinitely many pairs $(x,y)$ that satisfy the below equation:
+$$
+\frac{x+y}{2} = 1
+$$</p>
+<p>In other words, there are infinitely many points $(x,y)$ whose mean is 1. For example $(x,y) = (2,0)$ and $(x,y) = (1,1)$ satisfy this equation. But $|2-0| \neq |1-1|$; meaning if $x$ and $y$ are individual data points in a dataset whose mean we are taking, then the &ldquo;group&rdquo; $(x,y) = (2,0)$ has more intra-group variability than the group $(x,y) = (1,1)$</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Koch CM, Chiu SF, Akbarpour M, Bharat A, Ridge KM, Bartom ET, Winter DR. A Beginner&rsquo;s Guide to Analysis of RNA Sequencing Data. Am J Respir Cell Mol Biol. 2018 Aug;59(2):145-157. doi: 10.1165/rcmb.2017-0430TR. PMID: 29624415; PMCID: PMC6096346.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+  </body>
+</html>

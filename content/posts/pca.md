@@ -4,6 +4,8 @@ date = 2024-09-23T09:28:44-07:00
 draft = true
 +++
 
+---
+
 Let $X$ be an $n \times d$ matrix. In an experimental content, $X$ could be a data matrix with $n$ observations and $d$ features. If $d > 3$, we cannot visualize the data to observe patterns and structure. This is a problem because data visualization can yield significant insights into data. 
 
 One solution is to reduce the dimensionality of the data. In other words, we can transform the $n \times d$ data matrix $X$ into an $n \times k$ data matrix $P$ where $k \leq 3$. To do so, we have to find a $d \times k$ transformation matrix $Z$ such that:
