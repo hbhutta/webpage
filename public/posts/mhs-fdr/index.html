@@ -6,9 +6,11 @@
     
     <style>
       div {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
          
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       }
+
+       
 
       pre, code {
         color: rgb(24, 174, 119);
@@ -83,8 +85,35 @@ H_{a}: \exists i,j \in [1, \ldots, k]: \mu_{g, T_{i}}  \neq \mu_{g, T_{j}}
 $$
 In the null hypothesis $H_{0}$, we hypothesize that any two treatments $T_{i}$ and $T_{j}$ have the same mean expression level of gene $g$. In the alternative hypothesis $H_{a}$, we hypothesize that there exist at least two treatments $T_{i}$ and $T_{j}$ with <em>different</em> mean expression levels of gene $g$.</p>
 <p>We will have this set of hypotheses <em>for each gene</em>, hence the situation becomes <em>multiple hypothesis testing</em>.</p>
-<h2 id="family-wise-error-rate-and-the-false-discovery-rate">Family-wise error rate and the False-Discovery Rate</h2>
-<p>The false discovery rate (FDR) is the rate of false discoveries</p>
+<h2 id="false-discovery-rate">False discovery rate</h2>
+<p>Recall that the $p$-value is the likelihood of falsely rejecting $H_{0}$. When we reject $H_{0}$ we accept the alternative, $H_{a}$. Typically in science (e.g. in clinicial trials of a drug), $H_{0}$ is what the scientists &ldquo;expect&rdquo; with their domain knowledge. But they formulate $H_{0}$ and $H_{a}$ anyway because there is the possibility for the data to indicate what they may not expect; the data may indicate $p &lt; \alpha$ making it safe to reject $H_{0}$ and accept $H_{a}$ &ndash; <strong>a new discovery</strong>.</p>
+<p>However, there is the chance of falsely rejecting $H_{0}$ (i.e. accepting $H_{a}$) (i.e. making a <em>false discovery</em>). Ideally, we want the rate of this false discovery &ndash; literally the <em>&ldquo;false discovery rate&rdquo; (FDR)</em>  &ndash; to be at a minimium, for obvious reasons.</p>
+<p>Now, we know that if $p &lt; 0.05$ we can reject $H_{0}$ and accept $H_{0}$ and &ldquo;make a discovery&rdquo;. But suppose, for the sake of argument, that this is a false discovery.</p>
+<h2 id="family-wise-error-rate">Family-wise error rate</h2>
+<p>The <em>family-wise error rate</em> (FWER) is a measurement of Type I error likelihood when making multiple comparisons. For $k$ independent hypothesis tests, each with a significance level $\alpha$, the upper on the FWER is:
+$$
+\text{FWER} \leq 1 - (1 - \alpha)^{k}
+$$</p>
+<p>For example, suppose we have $\alpha = 0.05$ for a hundred independent tests (e.g. for a hundred different genes in differential gene expression analysis). Below we show the FWER for just one test, compared to a hundred independent tests:
+$$
+\begin{cases}
+\text{# tests = 1}: \text{FWER} = 1 - (1 - 0.05)^{1} = 0.05 = 5\% \\
+\text{# tests = 2}: \text{FWER} = 1 - (1 - 0.05)^{2} = 0.0975 = 9.75\% \\
+\text{# tests = 3}: \text{FWER} = 1 - (1 - 0.05)^{3} = 0.142625 = 14.26\% \\
+&hellip; \\
+\text{# tests = &hellip;}: \text{FWER} = 1 - (1 - 0.05)^{100} \approx 0.99407 \approx 99.41\% \\
+\end{cases}
+$$</p>
+<h2 id="bonferroni-correction">Bonferroni correction</h2>
+<p>Knowing that we only make a &ldquo;discovery&rdquo; in a particulra hypothesis test when $p &lt; \alpha$, the if the significance threshold $\alpha$ were lower, wouldn&rsquo;t we be rejecting $H_{0}$ less often, and, in other words, be making fewer discoveries? And if we were making fewer discoveries, wouldn&rsquo;t we also be making fewer <em>false</em> discoveries? This is the idea behind <em>Bonferroni correction</em>.</p>
+<p>When conducting $k$ hypothesis tests, with significance level $\alpha$, define the new significance level $\alpha&rsquo;$ as:
+$$
+\alpha&rsquo; = \frac{\alpha}{k}
+$$</p>
+<p>Now, for each of the hypothesis tests in the multiple hypothesis testing, reject $H_{0}$ if $p &lt; \alpha&rsquo;$, not if $p &lt; \alpha$.</p>
+<p>As the whole idea of Bonferroni correction is to reduce the chance of making false discoveries by reducing the chance of making any discoveries at all, one obvious problem with it is that we also reduce the chance of making any true discoveries. In other words, Bonferroni correction reduces the <a href="">statistical power</a> of our study.</p>
+<p>An alternative to Bonferroni correction is the <em>Benjamini-Hochberg procedure</em> for controlling the FDR.</p>
+<h2 id="benjamini-hochberg-procedure">Benjamini-Hochberg procedure</h2>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

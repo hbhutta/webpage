@@ -28,6 +28,8 @@ A T2 error occurs when
 - It is a *false rejection* of the 
 
 
+
+
 For example, suppose we are conducting an RNA-seq experiment with the following null and alternative hypotheses:
 $$
 \begin{cases}
@@ -56,9 +58,52 @@ In the null hypothesis $H_{0}$, we hypothesize that any two treatments $T_{i}$ a
 
 We will have this set of hypotheses *for each gene*, hence the situation becomes *multiple hypothesis testing*.
 
-## Family-wise error rate and the False-Discovery Rate
-The false discovery rate (FDR) is the rate of false discoveries
+## False discovery rate
+
+Recall that the $p$-value is the likelihood of falsely rejecting $H_{0}$. When we reject $H_{0}$ we accept the alternative, $H_{a}$. Typically in science (e.g. in clinicial trials of a drug), $H_{0}$ is what the scientists "expect" with their domain knowledge. But they formulate $H_{0}$ and $H_{a}$ anyway because there is the possibility for the data to indicate what they may not expect; the data may indicate $p < \alpha$ making it safe to reject $H_{0}$ and accept $H_{a}$ -- **a new discovery**. 
+
+However, there is the chance of falsely rejecting $H_{0}$ (i.e. accepting $H_{a}$) (i.e. making a *false discovery*). Ideally, we want the rate of this false discovery -- literally the *"false discovery rate" (FDR)*  -- to be at a minimium, for obvious reasons.
+
+Now, we know that if $p < 0.05$ we can reject $H_{0}$ and accept $H_{0}$ and "make a discovery". But suppose, for the sake of argument, that this is a false discovery.
+
+## Family-wise error rate 
+
+The *family-wise error rate* (FWER) is a measurement of Type I error likelihood when making multiple comparisons. For $k$ independent hypothesis tests, each with a significance level $\alpha$, the upper on the FWER is:
+$$
+\text{FWER} \leq 1 - (1 - \alpha)^{k}
+$$
+
+For example, suppose we have $\alpha = 0.05$ for a hundred independent tests (e.g. for a hundred different genes in differential gene expression analysis). Below we show the FWER for just one test, compared to a hundred independent tests:
+$$
+\begin{cases}
+    \text{\# tests = 1}: \text{FWER} = 1 - (1 - 0.05)^{1} = 0.05 = 5\\% \\\
+    \text{\# tests = 2}: \text{FWER} = 1 - (1 - 0.05)^{2} = 0.0975 = 9.75\\% \\\
+    \text{\# tests = 3}: \text{FWER} = 1 - (1 - 0.05)^{3} = 0.142625 = 14.26\\% \\\
+    ... \\\
+    \text{\# tests = ...}: \text{FWER} = 1 - (1 - 0.05)^{100} \approx 0.99407 \approx 99.41\\% \\\
+\end{cases}
+$$
+
+## Bonferroni correction
+
+Knowing that we only make a "discovery" in a particulra hypothesis test when $p < \alpha$, the if the significance threshold $\alpha$ were lower, wouldn't we be rejecting $H_{0}$ less often, and, in other words, be making fewer discoveries? And if we were making fewer discoveries, wouldn't we also be making fewer *false* discoveries? This is the idea behind *Bonferroni correction*. 
+
+When conducting $k$ hypothesis tests, with significance level $\alpha$, define the new significance level $\alpha'$ as:
+$$
+\alpha' = \frac{\alpha}{k}
+$$
+
+Now, for each of the hypothesis tests in the multiple hypothesis testing, reject $H_{0}$ if $p < \alpha'$, not if $p < \alpha$.
+
+As the whole idea of Bonferroni correction is to reduce the chance of making false discoveries by reducing the chance of making any discoveries at all, one obvious problem with it is that we also reduce the chance of making any true discoveries. In other words, Bonferroni correction reduces the [statistical power]() of our study.
+
+
+An alternative to Bonferroni correction is the *Benjamini-Hochberg procedure* for controlling the FDR. 
+
+## Benjamini-Hochberg procedure
+
 
 [^1]: The intersted reader can refer to [this Reddit explanation](https://www.reddit.com/r/askscience/comments/vxink/why_is_p005_the_magic_number_for_significance/) of why Fisher chose $0.05$ as his significance threshold
 [^2]: Higdon, R. (2013). Multiple Hypothesis Testing. In: Dubitzky, W., Wolkenhauer, O., Cho, KH., Yokota, H. (eds) Encyclopedia of Systems Biology. Springer, New York, NY. https://doi.org/10.1007/978-1-4419-9863-7_1211
 [^3]: Haynes, W. (2013). Benjamini–Hochberg Method. In: Dubitzky, W., Wolkenhauer, O., Cho, KH., Yokota, H. (eds) Encyclopedia of Systems Biology. Springer, New York, NY. https://doi.org/10.1007/978-1-4419-9863-7_1215
+[^4]: https://www.sciencedirect.com/science/article/abs/pii/B9780080448947015621
